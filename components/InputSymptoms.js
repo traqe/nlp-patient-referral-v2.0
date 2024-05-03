@@ -85,15 +85,20 @@ export default function InputSymptoms({ navigation }) {
              style={styles.input}
              onChangeText={changeHandler}
               />
-            <Text style={styles.summary}>
-            <FontAwesome5 style={styles.diseaseIcon} name="disease" size={24} color="black" />
-                Summary: {symptoms}
-            </Text>
-            
+            <View style={styles.summary}>
+                <View style={styles.summaryHeader}>
+                    <FontAwesome5 style={styles.diseaseIcon} name="disease" size={24} color="black" />
+                    <Text style={{ fontSize: 16, fontWeight: '500', color: "white", marginLeft: 0.1 }}>Summary of patient symptoms</Text>
+                </View>
+                <View style={styles.summaryBoundary}>
+                    <Text style={styles.summaryText}>{symptoms}</Text>
+                </View>
+            </View>
+
             <View style={styles.button}>
                 <Button 
                  title='Submit' 
-                 color={'#fca'}
+                 color={'#140c82'}
                  onPress={submitButton} /> 
             </View>
         </View>
@@ -105,25 +110,42 @@ const styles = StyleSheet.create({
         margin: 20,
         borderWidth: 3,
         borderRadius: 15,
-        borderColor: '#fca',
+        borderColor: '#140c82',
         padding: 10,
-        marginTop: 10,
-        marginBottom: 35
+        marginTop: 280,
+        marginBottom: 22
     },
     button: {
         margin: 55,
-        marginTop: 120,
+        marginTop: 220,
+        height: 90,
     },
     summary: {
         padding: 20,
-        backgroundColor: '#fca',
+        backgroundColor: '#140c82',
         marginTop: 15,
-        marginHorizontal: 7,
-        borderRadius: 5,
-        fontWeight: 'bold'      
+        marginHorizontal: 25,
+        borderRadius: 35,
+        fontWeight: 'bold',  
+        color: 'white'    
       },
     body: {
         flex: 1,
-        justifyContent: 'center'
     },
+    diseaseIcon: {
+        color: '#00cc00',
+        marginRight: 10,
+    },
+    summaryHeader: {
+        flexDirection: 'row',
+    },
+    summaryBoundary: {
+        marginTop: 10,
+        backgroundColor: '#6a65b4',
+        borderRadius: 25,
+        padding: 8,
+    },
+    summaryText: {
+        color: 'white'
+    }
 })

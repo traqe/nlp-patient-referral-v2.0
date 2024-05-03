@@ -93,7 +93,7 @@ export default function Result({ route, navigation }) {
                 <TouchableOpacity onPress={() => showDescrition(doctorSelected)}>
                 <Text>
                     <Card style={styles.card}>
-                        <View onPress={() => showDescrition(doctorSelected)} style={styles.cardContainer}>
+                        <View style={styles.cardContainer}>
                             <Image style={styles.avatarImage} source={images.doctors[doctorSelected.image]}/>
                             <Text style={styles.doctorName}>{doctorSelected.name}</Text>
                             <Text style={styles.doctorSpecialist}>{doctorSelected.specialty}</Text>
@@ -109,10 +109,11 @@ const styles = StyleSheet.create({
     container: {
         padding: 10,
         flex: 1,
+        alignItems: 'center'
     },
     cardContainer: {
         height: 270,
-        width: 326,
+        width: 385,
         alignItems: "center",
     },
     avatarImage: {
@@ -121,19 +122,20 @@ const styles = StyleSheet.create({
         width: 150,
         marginBottom: 25,
         marginTop: 20,
-        borderColor: '#000000',
-          borderWidth: 2,
+        borderColor: '#00cc00',
+        borderWidth: 3,
     },
     doctorName: {
         fontSize: 23,
         fontWeight: "bold",
         marginBottom: 10,
         letterSpacing: 0.5,
-        color: "#191919"
+        color: "white"
     },
     doctorSpecialist: {
         fontStyle: "italic",
-        color: "#191919",
-        fontWeight: 'bold'
+        color: "white",
+        fontWeight: 'bold',
+        fontSize: 15
     }
 })
