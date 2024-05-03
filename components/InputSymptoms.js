@@ -7,10 +7,12 @@ export default function InputSymptoms({ navigation }) {
 
     const [symptoms, setSymptoms] = useState('');
 
+    // store the input from textbox
     const changeHandler = (val) => {
         setSymptoms(val);
     }
 
+    // passing the symptoms to the results page
     const submitButton = () => {
         if(symptoms != '' ) {
             navigation.navigate('Results', {symptom_stems :nlp_preprocessor(symptoms)});

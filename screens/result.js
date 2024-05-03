@@ -36,7 +36,7 @@ export default function Result({ route, navigation }) {
         {id: 1, name: 'Dr. Amani Nkosi', image: 'amani_nkosi', specialty: 'Infectious Disease Specialist', description: 'Infectious disease doctors are healthcare providers who specialize in diagnosing and treating conditions caused by bacteria, parasites, viruses and fungi.'},
         {id: 2, name: 'Dr. Kwame Osei', image: 'kwame_osei', specialty: 'Gastroenterologist', description: ' A gastroenterologist is a medical doctor who specializes in conditions affecting your digestive system.'},
         {id: 3, name: 'Dr. Zara Abasi', image: 'zara_abasi', specialty: 'Endocrinologist/Cardiologist', description: 'Endocrinologists specialize in treating disorders of the endocrine system, the network of hormone-producing glands in your body.'},
-        {id: 4, name: 'Dr. Tendai Mbeki', image: 'tendai_mbeki', special: 'Pulmontyologist/Allegist', description: 'A pulmonologist is a doctor who specializes in lung conditions. A pulmonologist diagnoses and treats diseases of the respiratory system.'},
+        {id: 4, name: 'Dr. Tendai Mbeki', image: 'tendai_mbeki', specialty: 'Pulmonologist/Allegist', description: 'A pulmonologist is a doctor who specializes in lung conditions. A pulmonologist diagnoses and treats diseases of the respiratory system.'},
         {id: 5, name: 'Dr. Sanaa Juma', image: 'sanaa_juma', specialty: 'Hepatologist', description: 'Hepatologists are medical doctors trained and certified to diagnose and treat various liver conditions.'},
         {id: 6, name: 'Dr. Jabari Sibanda', image: 'jabari_sibanda', specialty: 'Neurologist', description: 'a medical specialist in the diagnosis and treatment of disorders of the nervous system.'},
         {id: 7, name: 'Dr. Niazi Chikwamba', image: 'niazi_chikwamba', specialty: 'Dermatologist', description: 'A dermatologist is a doctor that specializes in treating skin, hair, nail, and mucous membrane disorders and diseases.'},
@@ -52,7 +52,7 @@ export default function Result({ route, navigation }) {
         // combine elements into symptom sentence
         const symptoms = symptom_stems.join(" ");
 
-        // find probalilty of each symptom in dataset against the input symptom
+        // find probalilty of each symptom in dataset using cosine similarity
         dataset.forEach(disease => {
             disease.probability = stringSimilarity(symptoms, disease.symptom);
         });
@@ -66,7 +66,7 @@ export default function Result({ route, navigation }) {
         });
         
         // if max probability available
-        if (maxDisease.probability > 0) {
+        if (maxDisease.probability > 0.09) {
             // classification successful
             return maxDisease;
         }
