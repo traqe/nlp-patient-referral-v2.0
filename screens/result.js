@@ -101,6 +101,13 @@ export default function Result({ route, navigation }) {
                     </Card>
                 </Text>
                 </TouchableOpacity>
+                <View style={styles.hintBubble}>
+                    <Card>
+                        <Text style={styles.hintBubbleText}>
+                            Consider adding more symptoms for more satisfying results.
+                        </Text>
+                    </Card>
+                </View>
             </View>
         )
     }
@@ -137,5 +144,14 @@ const styles = StyleSheet.create({
         color: "white",
         fontWeight: 'bold',
         fontSize: 15
+    },
+    hintBubble: {
+        marginTop: 5,
+        width: 420
+    },
+    hintBubbleText: {
+        color: 'white',
+        fontSize: 13,
+        fontWeight: '600'
     }
 })

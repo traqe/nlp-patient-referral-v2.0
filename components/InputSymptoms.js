@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Alert } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, Alert, Image } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import FlatButton from '../shared/button';
 
@@ -81,6 +81,7 @@ export default function InputSymptoms({ navigation }) {
 
     return (
         <View style={styles.body}>
+            <Image source={require('../assets/ui_doctor_image.png')} style={styles.doctorImage} />
             <TextInput 
              placeholder="Input Patient's Symptoms"
              style={styles.input}
@@ -110,12 +111,12 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         borderColor: '#140c82',
         padding: 10,
-        marginTop: 280,
+        marginTop: 70,
         marginBottom: 22
     },
     button: {
         margin: 55,
-        marginTop: 180,
+        marginTop: 140,
         height: 90,
         marginBottom: 80
     },
@@ -123,7 +124,7 @@ const styles = StyleSheet.create({
         padding: 20,
         backgroundColor: '#140c82',
         marginTop: 15,
-        marginHorizontal: 25,
+        marginHorizontal: 30,
         borderRadius: 8,
         fontWeight: 'bold',  
         color: 'white'    
@@ -146,5 +147,10 @@ const styles = StyleSheet.create({
     },
     summaryText: {
         color: 'white'
+    },
+    doctorImage: {
+        height: 200,
+        width: 200,
+        alignSelf: 'center'
     }
 })
