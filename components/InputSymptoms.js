@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Alert } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
+import FlatButton from '../shared/button';
 
 
 export default function InputSymptoms({ navigation }) {
@@ -96,10 +97,7 @@ export default function InputSymptoms({ navigation }) {
             </View>
 
             <View style={styles.button}>
-                <Button 
-                 title='Submit' 
-                 color={'#140c82'}
-                 onPress={submitButton} /> 
+                <FlatButton text='Submit' onPress={submitButton} /> 
             </View>
         </View>
     )
@@ -109,7 +107,7 @@ const styles = StyleSheet.create({
     input: {
         margin: 20,
         borderWidth: 3,
-        borderRadius: 15,
+        borderRadius: 12,
         borderColor: '#140c82',
         padding: 10,
         marginTop: 280,
@@ -117,15 +115,16 @@ const styles = StyleSheet.create({
     },
     button: {
         margin: 55,
-        marginTop: 220,
+        marginTop: 180,
         height: 90,
+        marginBottom: 80
     },
     summary: {
         padding: 20,
         backgroundColor: '#140c82',
         marginTop: 15,
         marginHorizontal: 25,
-        borderRadius: 35,
+        borderRadius: 8,
         fontWeight: 'bold',  
         color: 'white'    
       },
@@ -142,7 +141,7 @@ const styles = StyleSheet.create({
     summaryBoundary: {
         marginTop: 10,
         backgroundColor: '#6a65b4',
-        borderRadius: 25,
+        borderRadius: 12,
         padding: 8,
     },
     summaryText: {
