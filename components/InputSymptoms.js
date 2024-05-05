@@ -149,8 +149,8 @@ const styles = StyleSheet.create({
         color: 'white'
     },
     doctorImage: {
-        height: 200,
-        width: 200,
+        height: 170,
+        width: 170,
         alignSelf: 'center'
     }
 })
