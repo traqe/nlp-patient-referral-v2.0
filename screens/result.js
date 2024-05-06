@@ -7,7 +7,7 @@ import { stringSimilarity } from "string-similarity-js";
 export default function Result({ route }) {
 
     const showDescrition = (input) => {
-        Alert.alert(input.specialty, input.description, [{text: 'Ok', onPress: () => console.log('specialty description shown')}]);
+        Alert.alert(input.specialty, input.description, [{text: 'Ok', onPress: () => console.log('specialty description shown')}, {text: 'Appoint', onPress: () => console.log('appointment made')}]);
     }
 
     // dataset of symptom-disease-doctor
@@ -28,7 +28,7 @@ export default function Result({ route }) {
         {disease: 'AIDS', symptom: 'muscle wasting patches in throat high fever extra marital contacts', doctor_id: 1, probability: 0},
         {disease: 'Urinary tract infection', symptom: 'burning micturition bladder discomfort foul smell of urine continuous feel of urine', doctor_id: 8, probability: 0},
         {disease: 'Dengue', symptom: 'skin rash chills joint pain vomiting high fever headache nausea loss of appetite pain behind the eyes back pain malaise muscle pain red spots over body', doctor_id: 1, probability: 0},
-        {disease: 'Acne', symptom: 'skin rash pus filled pimples blackheads scurring', doctor_id: 8, probability: 0},
+        {disease: 'Acne', symptom: 'skin rash pus filled pimples blackheads scurring', doctor_id: 7, probability: 0},
         {disease: 'Gingivitis', symptom: 'bleeding gums brushing flossing bright red reddish purple gums tender painless mouth sores swollen shiny bad breath', doctor_id: 10, probability: 0},
         {disease: 'Gum Disease', symptom: 'bad breath toothache bright red gums loose teeth receding gums tender tooth loss', doctor_id: 10, probability: 0},
         {disease: 'Tooth Decay', symptom: 'toochache sensitivity tooth mild sharp pain hot cold sweet holes pits brown black white stain', doctor_id: 10, probability: 0},
@@ -40,6 +40,16 @@ export default function Result({ route }) {
         {disease: 'Physical Issues', symptom: 'pain balance injury mobility weakened joints discomfort sleeping uncontrollable urination coordination motion neck back neurological disorder disability breathing', doctor_id: 13, probability: 0},
         {disease: 'Sinus Infection', symptom: 'face sinuses back eyes ear forehead congestion itching loss runny nose swelling sinus pressure ear infection headache mouth breathing phlegm pus throat irritation', doctor_id: 14, probability: 0},
     ]
+
+    function displayDiseases() {
+        var count = 1
+        dataset.forEach(element => {
+            console.log(count,": ", element.disease);
+            count+=1
+        });
+    }
+
+    displayDiseases();
 
     // doctor dataset
     const doctors = [
